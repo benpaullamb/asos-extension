@@ -23,7 +23,11 @@ async function loadBrands() {
 
   const filters = getCurrentFilters();
   const brandsIndex = filters.findIndex(({ name }) => name === 'Brand');
-  filters[brandsIndex].values = brands.values;
+  if (brandsIndex) {
+    filters[brandsIndex].values = brands.values;
+  } else {
+    filters.push(brands);
+  }
 
   setUrl(filters);
 }
