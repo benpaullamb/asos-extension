@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Lamb ASOS Quick Save",
+  "version": "0.1.0",
+  "description": "",
+  "icons": {},
+  "content_scripts": [
+    {
+      "matches": ["https://*.asos.com/*"],
+      "js": ["content-script.js"]
+    }
+  ],
+  "action": {
+    "default_title": "Lamb ASOS Quick Save",
+    "default_popup": "./src/popup/index.html"
+  },
+  "permissions": ["storage"]
+}
